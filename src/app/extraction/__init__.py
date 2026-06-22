@@ -1,0 +1,2 @@
+"""Photo extraction pipeline."""
+

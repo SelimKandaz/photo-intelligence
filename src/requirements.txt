@@ -1,0 +1,11 @@
+fastapi>=0.115
+uvicorn[standard]>=0.30
+PySide6>=6.8
+pillow>=10.4
+pillow-heif>=0.18
+pytesseract>=0.3.13
+zxing-cpp>=2.2
+opencv-python>=4.10
+pyzbar>=0.1.9
+pypdf>=4.3
+pymupdf>=1.24

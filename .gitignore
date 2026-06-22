@@ -1,0 +1,75 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets / local environment
+.env
+.env.*
+!src/.env.example
+
+# Runtime app data - DO NOT COMMIT
+/data/
+/photos/
+/exports/
+/logs/
+/storage/
+/temp/
+/tmp/
+/cache/
+/thumbnails/
+*.db
+*.sqlite
+*.sqlite3
+
+# Root portable packaged runtime - DO NOT COMMIT
+/PhotoIntelligence.exe
+/_internal/
+/Repair_Runtime.bat
+/Serial_Harvest_Export.bat
+/run_app.bat
+/README_RUNTIME_FIX.txt
+/README_SERIAL_HARVEST_PATCH.txt
+/README_SMART_SERIAL_HARVEST_PATCH.txt
+
+# Backups / patches / archives
+/backup_*/
+backup_*/
+backup_before_*/
+*_backup*/
+*.bak
+*.old
+*.zip
+*.7z
+*.rar
+
+# Company/user sensitive exports
+*.csv
+*.xlsx
+*.xls
+*.pdf
+serials_only.txt
+serials_with_photos.csv
+review_needed_serials.csv
+serial_conflicts_by_photo.csv
+inventory_serials.csv
+
+# Build outputs
+/dist/
+/build/
+*.spec
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
