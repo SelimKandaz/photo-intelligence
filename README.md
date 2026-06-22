@@ -169,3 +169,11 @@ Smart grouping uses import/photo sequence order instead of trusting file downloa
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+## License
+
+Copyright (c) 2026 Selim Kandaz. All rights reserved.
+
+This repository is public for portfolio and review purposes only. Use, copying,
+modification, distribution, sublicensing, or sale of this software requires prior
+written permission.
