@@ -165,3 +165,7 @@ Outputs:
 Serial values are deduplicated by default. If the same serial appears in multiple photos, the simple TXT export keeps only one copy, while the CSV keeps traceability through photo names and duplicate counts.
 
 Smart grouping uses import/photo sequence order instead of trusting file download dates. This helps separate serial batches when downloaded files share the same modified date.
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
