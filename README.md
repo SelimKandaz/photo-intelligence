@@ -138,7 +138,23 @@ python scripts\export_serial_rows.py
 
 - The first database implementation is SQLite. PostgreSQL can be added behind the repository boundary.
 - The worker is a local background thread. Redis/RQ or Celery can replace it without changing the extraction tables.
-- PaddleOCR/vector search are intentionally future hooks, not active dependencies in this first pass.
+- PaddleOCR remains a future hook. An optional Ollama/Qdrant semantic backend is now included under `src/app/semantic_backend/` for local vector search and grounded answers.
+
+## Optional Semantic Backend
+
+The native desktop application remains the default. To use the optional local
+Ollama/Qdrant backend, install the same requirements, copy `src/.env.example`
+to `src/.env`, start Qdrant with `docker compose -f src/docker-compose.semantic.yml up -d`,
+and run from `src`:
+
+```powershell
+python -m app.semantic_backend.main
+```
+
+This backend is intentionally local-only. The public repository contains only
+secret-free configuration examples and synthetic-safe source code. Never add
+`.env`, company documents, real photos, databases, logs, or Qdrant storage to
+the public repository.
 
 ## Moving Home To Office
 

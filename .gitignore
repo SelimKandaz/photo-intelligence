@@ -19,10 +19,16 @@ env/
 
 # Runtime app data - DO NOT COMMIT
 /data/
+/src/data/
+/src/app_data/
 /photos/
+/src/photos/
 /exports/
+/src/exports/
 /logs/
+/src/logs/
 /storage/
+/src/storage/
 /temp/
 /tmp/
 /cache/

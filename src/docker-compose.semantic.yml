@@ -1,0 +1,11 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports:
+      - "6333:6333"
+    volumes:
+      - ./qdrant_storage:/qdrant/storage
+
+# Ollama remains a local host service. Start the semantic backend with:
+#   python -m app.semantic_backend.main
+# from this src directory after starting Qdrant.

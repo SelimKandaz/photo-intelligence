@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PrivateAI Operations Assistant</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Local Windows Operations Assistant</p>
+          <h1>PrivateAI MVP</h1>
+          <p class="lede">
+            Local-only ingestion, source-cited answers, and deterministic audit views for company operations data.
+          </p>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Status</h2>
+          <button id="refreshStatus">Refresh</button>
+        </div>
+        <div id="statusGrid" class="status-grid"></div>
+        <div id="lastRunBox" class="subpanel muted">No ingestion run yet.</div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Ingestion</h2>
+        </div>
+        <div class="button-row">
+          <button id="ingestChanged">Ingest changed files</button>
+          <button id="forceReindex" class="secondary">Force full reindex</button>
+        </div>
+        <div id="ingestSummary" class="status-grid compact"></div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>File</th>
+                <th>Relative Path</th>
+                <th>Error</th>
+              </tr>
+            </thead>
+            <tbody id="failedFilesBody">
+              <tr><td colspan="3" class="muted">No failed or unsupported files.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Ask</h2>
+        </div>
+        <form id="askForm" class="stack">
+          <textarea id="questionInput" rows="4" placeholder="Ask about PO 12345, SO 98765, serials, customer followups, or server reports."></textarea>
+          <div class="button-row">
+            <button type="submit">Ask</button>
+          </div>
+        </form>
+        <div id="answerBox" class="output">No answer yet.</div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>File</th>
+                <th>Category</th>
+                <th>Chunk</th>
+                <th>Score</th>
+                <th>Boost Reason</th>
+                <th>Preview</th>
+              </tr>
+            </thead>
+            <tbody id="sourcesBody">
+              <tr><td colspan="6" class="muted">No sources yet.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Audits</h2>
+        </div>
+        <div class="button-row wrap">
+          <button data-audit="/audit/serial-conflicts">Serial conflicts</button>
+          <button data-audit="/audit/duplicate-serials">Duplicate serials</button>
+          <button data-audit="/audit/customer-followups">Customer followups</button>
+          <button data-audit="/audit/failed-reports">Failed server reports</button>
+        </div>
+        <form id="poSoForm" class="button-row wrap inline-form">
+          <input id="poSoQuery" type="text" placeholder="PO/SO query, for example 12345 or SO 98765" />
+          <button type="submit" class="secondary">PO/SO summary</button>
+        </form>
+        <div id="auditSummaryBox" class="subpanel muted">No audit run yet.</div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Severity</th>
+                <th>Issue Type</th>
+                <th>Summary</th>
+                <th>Source File</th>
+                <th>Evidence</th>
+                <th>Recommended Action</th>
+              </tr>
+            </thead>
+            <tbody id="auditBody">
+              <tr><td colspan="6" class="muted">No findings yet.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
